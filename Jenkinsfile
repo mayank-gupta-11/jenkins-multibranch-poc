@@ -67,7 +67,7 @@ pipeline {
                 script {
                     service_dir_name = readFile('abc.txt').trim()
                     }
-                    echo "${project_name}"
+                    echo "${service_dir_name}"
 
                 }
 
@@ -98,7 +98,7 @@ pipeline {
                 script {
                     service_dir_name = readFile('abc.txt').trim()
                     }
-                    echo "${project_name}"
+                    echo "${service_dir_name}"
 
                 }
 
