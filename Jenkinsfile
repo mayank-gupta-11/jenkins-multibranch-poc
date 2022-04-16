@@ -6,7 +6,7 @@ pipeline {
 
     environment {
 
-        PROJECT_WORKSPACE = "/home/jenkins/mount-dir/workspace/poc"
+        PROJECT_WORKSPACE = "/var/jenkins_home/workspace/jenkins-multibranch-poc"
 
     }
 
