@@ -59,7 +59,7 @@ pipeline {
                 dir("$env.PROJECT_WORKSPACE"){
 
                 sh """
-                   echo "prints commit id: ${env.GIT_COMMIT}"
+                   echo "print commit id: ${env.GIT_COMMIT}"
                    echo `git diff-tree --no-commit-id --name-only -r ${env.GIT_COMMIT} | cut -d/ -f1| sort -u`  > abc.txt
                    cat abc.txt
                 """
