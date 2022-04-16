@@ -1,12 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.10.1-alpine' } }
+    agent { label 'master' }
     stages {
         stage('build') {
             steps {
-                sh '''
-                python --version
-                echo "data integration pipeline triggered"
-                '''
+                echo "Hello World! data integration"
             }
         }
     }
