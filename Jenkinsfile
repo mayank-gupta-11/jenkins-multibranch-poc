@@ -92,7 +92,7 @@ pipeline {
                    echo "print commit id: ${env.GIT_COMMIT}"
                    git checkout origin/${BRANCH_NAME}
                    latest_commit_id=`git log -n 1 --pretty=format:"%H"`
-                   echo `git diff-tree --no-commit-id --name-only -r $latest_commit_id | cut -d/ -f1| sort -u`  > abc.txt
+                   echo `git diff-tree --no-commit-id --name-only -r $latest_commit_id| cut -d/ -f1| sort -u`  > abc.txt
                    cat abc.txt
                 """
                 script {
