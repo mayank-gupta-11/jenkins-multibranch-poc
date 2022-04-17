@@ -1,3 +1,3 @@
 print("ingestion code")
-print("hiiiiiiii")
+print("hiiiiii")
 print("ss")
