@@ -1,3 +1,3 @@
 print("integration codes")
 print("ok")
-print("hello from data integrationsss")
+print("hello from data")
