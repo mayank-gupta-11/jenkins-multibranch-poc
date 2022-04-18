@@ -6,7 +6,7 @@ pipeline {
 
     environment {
 
-        PROJECT_WORKSPACE = "/home/jenkins/mount-dir/workspace/poc"
+        PROJECT_WORKSPACE = "/var/jenkins_home/workspace/jenkins-multibranch-poc"
 
     }
 
@@ -67,7 +67,7 @@ pipeline {
                 script {
                     service_dir_name = readFile('abc.txt').trim()
                     }
-                    echo "${project_name}"
+                    echo "${service_dir_name}"
 
                 }
 
@@ -91,14 +91,15 @@ pipeline {
                 sh """
                    echo "print commit id: ${env.GIT_COMMIT}"
                    git checkout origin/${BRANCH_NAME}
-                   latest_id=`git log -n 1 --pretty=format:"%H"`
-                   echo `git diff-tree --no-commit-id --name-only -r $latest_id | cut -d/ -f1| sort -u`  > abc.txt
+                   latest_commit_id=`git log --format="%H" -n 1`
+                   echo \$latest_commit_id
+                   echo `git diff-tree --no-commit-id --name-only -r \$latest_commit_id | cut -d/ -f1| sort -u`  > abc.txt
                    cat abc.txt
                 """
                 script {
                     service_dir_name = readFile('abc.txt').trim()
                     }
-                    echo "${project_name}"
+                    echo "${service_dir_name}"
 
                 }
 
